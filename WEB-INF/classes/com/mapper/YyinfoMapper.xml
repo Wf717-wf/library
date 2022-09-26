@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.YyinfoMapper">
+	<resultMap type="Yyinfo" id="queryMap">
+		<id property="id" column="id" />
+		<result property="zid" column="zid" />
+		<result property="ydate" column="ydate" />
+		<result property="cdate" column="cdate" />
+		<result property="uid" column="uid" />
+		<result property="state" column="state" />
+		<result property="qddate" column="qddate" />
+		<association property="zwinfoVO" javaType="Zwinfo">
+			<id property="id" column="id" />
+			<result property="name" column="name" />
+		</association>
+		<association property="userinfoVO" javaType="Userinfo">
+			<id property="id" column="id" />
+			<result property="sno" column="sno" />
+			<result property="upwd" column="upwd" />
+			<result property="name" column="name" />
+			<result property="xy" column="xy" />
+			<result property="tel" column="tel" />
+			<result property="utype" column="utype" />
+			<result property="cdnums" column="cdnums" />
+		</association>
+	</resultMap>
+	<sql id="Where_Clause">
+		<where>
+			<if test="id!=null and id!=0">
+				and a.id= #{id}
+			</if>
+			<if test="zid!=null and zid!=0">
+				and a.zid= #{zid}
+			</if>
+			<if test="ydateStart!=null and ydateStart!=''">
+				and a.ydate&gt;=#{ydateStart}
+			</if>
+			<if test="ydateEnd!=null and ydateEnd!=''">
+				and a.ydate&lt;=#{ydateEnd}
+			</if>
+			<if test="cdate!=null and cdate!=''">
+				and a.cdate=#{cdate}
+			</if>
+			<if test="ydate!=null and ydate!=''">
+				and a.ydate=#{ydate}
+			</if>
+			<if test="uid!=null and uid!=0">
+				and a.uid= #{uid}
+			</if>
+			<if test="temp==1">
+				and a.state!='已取消'
+			</if>
+			<if test="state!=null and state!=''">
+				and a.state=#{state}
+			</if>
+		</where>
+	</sql>
+	<select id="query" parameterType="java.util.Map"
+		resultMap="queryMap">
+		select a.*,b.name,c.sno,c.upwd,c.name,c.xy,c.tel,c.utype,c.cdnums from
+		yyinfo a left join zwinfo b on a.zid=b.id left join userinfo c on
+		a.uid=c.id
+		<include refid="Where_Clause" />
+		order by ydate desc,cdate asc
+		<if test="page">
+			limit #{offset} ,#{pageSize}
+		</if>
+	</select>
+	<select id="getCount" parameterType="java.util.Map"
+		resultType="Int">
+		select count(*) nums from yyinfo a left join zwinfo b on a.zid=b.id
+		left join userinfo c on a.uid=c.id
+		<include refid="Where_Clause" />
+	</select>
+	<select id="queryYyinfoById" parameterType="int"
+		resultType="Yyinfo">
+		select * from yyinfo where id=${value}
+	</select>
+	<insert id="insertYyinfo" useGeneratedKeys="true"
+		keyProperty="id" parameterType="Yyinfo">
+		insert into yyinfo
+		(zid,ydate,cdate,uid,state,qddate)
+		values
+		(#{zid},#{ydate},#{cdate},#{uid},#{state},#{qddate});
+	</insert>
+	<update id="updateYyinfo" parameterType="Yyinfo">
+		update yyinfo
+		set
+		zid=#{zid},ydate=#{ydate},cdate=#{cdate},uid=#{uid},state=#{state},qddate=#{qddate}
+		where
+		id=#{id}
+	</update>
+	<delete id="deleteYyinfo" parameterType="int">
+		delete from yyinfo where id=${value}
+	</delete>
+</mapper>
+ 

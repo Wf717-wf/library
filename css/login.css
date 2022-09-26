@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0; padding:0}
+html, body {
+    font: normal 14px "Microsoft YaHei";
+    font-family: "Microsoft YaHei","微软雅黑","sans-serif";
+  height: 100%;
+    width:100%;
+}
+body{min-width:1200px;}
+ul li{ list-style:none}
+.blue{ color:#31acfb}
+a{ text-decoration:none}
+
+
+.main{ width:100%; background:url(../images/bk-login.png) no-repeat; background-size:100% 100%; overflow:hidden}
+.main0{ width:528px; height:540px; background:#fff; margin:140px auto;}
+.main_left{ float:left; width:647px; position:relative}
+.main_left img{ position:absolute}
+.theimg{ top:90px; left:270px}
+.secimg{top:90px; left:200px}
+.firimg{top:90px; left:56px}
+.main_right1 {
+    width: 600px;
+    margin: 0 auto;
+}
+.txt1{ width:600px; height:42px; margin-top:20px}
+.txt1 .control{ width:80px; font-size:14px; color:#666; height:40px; line-height:40px;letter-spacing: 2px;float: left; text-align: right;}
+.txt1 input,select{height:40px; border:1px solid #ccc; padding-left:10px; margin-left:20px;width: 240px;}
+.txt1 select{width: 252px;}
+.sub1{ width:600px; height:30px; font-size:14px; color:#666; border-bottom:1px solid #cccccc;}
+.sub1 p{ float:right}
+
+.main_right{ width:456px; height:386px;margin: 0 auto;}
+.main_r_up{ /**height:74px;*/ padding-top:10px;    overflow: hidden;}
+.main_r_up img{ float:left}
+.main_r_up .pp{ float:left;height:74px; line-height:74px; font-size:18px; color:#333; padding-left:20px;letter-spacing:9px;}
+.sub{ width:456px; height:30px; font-size:14px; color:#666; border-bottom:1px solid #cccccc;}
+.sub p{ float:right}
+.txt{ width:456px; height:42px; margin-top:20px}
+.txt label{ width:80px; font-size:14px; color:#666; height:40px; line-height:40px;letter-spacing: 2px;float: left; text-align: right;}
+.txt input,select{height:40px; border:1px solid #ccc; padding-left:10px; margin-left:20px;width: 240px;}
+.txt select{width: 252px;}
+
+
+.txt input.txtyzm{width:140px; float:left}
+.txt img.yzmimg{ float:left; margin-left:5px}
+.xieyi{ clear:both;padding-left:110px; padding-top:35px; font-size:14px; color:#5a5a5a; height:30px; line-height:30px}
+.xiayibu{ width:260px; height:40px; line-height:40px; text-align:center; color:#fff; background:#30adfa; font-size:14px;
+border-radius:5px; margin-left:100px; margin-top:20px; cursor:pointer;border:0;}
+
+
+
+
+/*注册**/
+.txt0{ margin-top:30px}
+input.txtyzmdx{width:140px; float:left; margin-left:10px}
+.zhucebtn{ float:left;width:260px; height:40px; line-height:40px; text-align:center; color:#fff; background:#30adfa; font-size:14px; border-radius:5px; margin-left:16px;cursor:pointer}
+
+.tipTimer{
+	display: block;
+	width: 70px;
+	height: 30px;
+	padding: 5px 10px;
+	font-size: 12px;
+	color: #999;
+	border: 1px solid #009fe9;
+	float: left;
+	margin-right: 70px;
+	line-height: 14px;
+	margin-left:10px
+}
+
+
+/**找回密码*/
+.zc_main{ width:100%; background:url(../images/bk-login.png) no-repeat; background-size:100% 100%; overflow:hidden}
+.zc_main0{ height: 520px; margin:0 auto;margin-top:140px;width: 980px;background-image: url(../images/bg.png);}
+.formBox{font-size: 14px;color: #333;width: 623px;margin: 0 auto;text-align: center;}
+.formBox h3{line-height: 90px; font-size:20px;color: #31acfb;}
+.formBox ul{ display: table;width: 100%;text-align: center;}
+.formBox ul li{display: table-cell;height: 36px;line-height: 36px;}
+.formBox ul li.firLi {text-align: left;}
+.formBox ul li.lastLi {text-align: right;}
+.mainCol {color: #31acfb;}
+.itembox{margin-top: 55px; overflow:hidden}
+.itembox label{display: block; width: 90px;font-weight: normal;line-height: 40px;margin: 0px;margin-left: 13px;float: left;text-align: right; font-size:14px; color:#333;}
+.itembox input{ display:block; float:left;height: 40px;line-height: 40px; color:#999;border: 1px solid #ccc;width: 280px;padding-left: 10px;margin-left: 40px;background-color: #f4f4f4;}
+.btnBox{ padding-top:30px;margin-left: 142px; width: 160px;}
+.btnBox button{width: 100%;line-height: 40px;font-size: 16px;color: #fff;background-color: #30adfa;border: none;border-radius: 5px; cursor:pointer}
+.itembox_2{ margin-top:28px}
+.itembox input.yzm{width: 178px;}
+.itembox .yzmbox{float: left;margin-left: 18px;}
+.yzmbox2{font-size: 12px;background-color: #f4f4f4;color: #666;border: 1px solid #ccc; float:left;width: 99px;line-height: 38px;margin-left: 3px;}
+.zc_sub{height:96px;padding-top: 62px;font-size: 18px;}
+.zc_sub span{padding-right:15px;color: #31acfb;}
+.btnBox_2{}
+.btnBox_2 button{display: block;width: 160px;margin: 0 auto;background-color: #31acfb; border-radius: 5px;line-height: 40px;font-size: 16px;color: #fff;border: 0px;text-decoration: none; cursor:pointer}
+input[readonly]{  
+    background-color: #efefef;  
+} 
+
+#alert-error {
+	color:red;
+}
